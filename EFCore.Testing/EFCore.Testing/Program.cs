@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +13,20 @@ namespace EFCore.Testing
         {
             try
             {
-                var db = new TestDbContext();
+                var db = new EmployeeDbContext();
                 db.Employees.Add(new Employee()
                 {
-                    EmployeeId = 2,
-                    EmployeeName = "Dhruv Sen"
+                    EmployeeId = 6,
+                    EmployeeName = "Test"
                 });
                 db.SaveChanges();
                 Console.WriteLine(1);
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
             }
             Console.Read();
         }
     }
 }
+
