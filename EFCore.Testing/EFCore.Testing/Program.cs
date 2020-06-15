@@ -10,6 +10,21 @@ namespace EFCore.Testing
     {
         static void Main(string[] args)
         {
+            try
+            {
+                var db = new TestDbContext();
+                db.Employees.Add(new Employee()
+                {
+                    EmployeeId = 2,
+                    EmployeeName = "Dhruv Sen"
+                });
+                db.SaveChanges();
+                Console.WriteLine(1);
+            }
+            catch(Exception ex) 
+            {
+            }
+            Console.Read();
         }
     }
 }
